@@ -1,0 +1,44 @@
+product_id,product_name,category,subcategory,brand,unit_price,cost_price,stock_quantity,reorder_level,supplier_id,weight_kg,dimensions_cm,color,warranty_months,rating,reviews_count
+P001,Laptop Pro 15,Electronics,Computers,TechPro,1299.99,899.99,45,10,S001,2.1,35x25x2,Silver,24,4.5,1250
+P002,Wireless Mouse,Electronics,Accessories,ClickMaster,29.99,15.99,320,50,S002,0.1,12x7x4,Black,12,4.3,890
+P003,Office Chair,Furniture,Seating,ComfortPlus,349.99,199.99,78,15,S003,15.5,65x65x120,Gray,36,4.6,567
+P004,USB-C Cable,Electronics,Cables,ConnectPro,19.99,8.99,500,100,S002,0.05,200x2x1,White,6,4.2,1450
+P005,Desk Lamp,Furniture,Lighting,BrightLight,79.99,39.99,150,30,S004,1.2,20x20x45,Black,12,4.4,678
+P006,Keyboard Mechanical,Electronics,Accessories,TypeMaster,149.99,79.99,95,20,S002,0.8,45x15x4,Black,24,4.7,2340
+P007,Monitor 27inch,Electronics,Displays,ViewPro,399.99,249.99,62,12,S001,5.5,61x45x18,Black,36,4.6,1890
+P008,Webcam HD,Electronics,Accessories,VisionCam,89.99,49.99,180,35,S005,0.2,8x8x6,Black,12,4.3,456
+P009,Headphones Wireless,Electronics,Audio,SoundWave,199.99,119.99,125,25,S006,0.3,20x18x8,Black,24,4.5,3450
+P010,Standing Desk,Furniture,Desks,ErgoDesk,599.99,349.99,34,8,S003,35.0,150x75x120,White,60,4.8,890
+P011,Tablet 10inch,Electronics,Tablets,TechPro,449.99,299.99,88,18,S001,0.5,25x17x1,Space Gray,24,4.4,1670
+P012,Printer Laser,Electronics,Printers,PrintMaster,299.99,189.99,56,12,S007,8.5,42x38x28,White,24,4.2,789
+P013,External SSD 1TB,Electronics,Storage,DataVault,129.99,79.99,210,40,S008,0.08,11x7x1,Blue,36,4.7,2890
+P014,Docking Station,Electronics,Accessories,ConnectPro,179.99,99.99,145,30,S002,0.6,15x10x3,Gray,24,4.5,1230
+P015,Ergonomic Mouse,Electronics,Accessories,ClickMaster,59.99,29.99,265,50,S002,0.15,13x8x5,Black,18,4.6,1560
+P016,Laptop Stand,Electronics,Accessories,ErgoDesk,49.99,24.99,190,40,S003,0.8,28x22x5,Silver,12,4.4,890
+P017,USB Hub 7-Port,Electronics,Accessories,ConnectPro,39.99,19.99,340,70,S002,0.2,12x8x2,Black,12,4.3,1120
+P018,Desk Organizer,Furniture,Accessories,OfficeMax,24.99,12.99,420,80,S004,0.5,30x15x10,Bamboo,0,4.5,670
+P019,Cable Management,Electronics,Accessories,OrganizePro,19.99,9.99,380,75,S004,0.3,50x5x2,Black,0,4.2,450
+P020,Monitor Arm,Furniture,Accessories,ErgoDesk,129.99,69.99,98,20,S003,3.5,45x15x10,Black,36,4.7,1340
+P021,Laptop Bag,Accessories,Bags,CarryPro,79.99,39.99,156,30,S009,0.8,40x30x10,Black,12,4.4,890
+P022,Power Bank 20000mAh,Electronics,Power,ChargeMaster,49.99,24.99,280,55,S010,0.4,15x7x2,Black,12,4.5,2340
+P023,Phone Stand,Accessories,Holders,HoldPro,14.99,7.99,450,90,S004,0.1,10x8x12,Silver,0,4.3,560
+P024,Wireless Charger,Electronics,Power,ChargeMaster,39.99,19.99,310,60,S010,0.2,10x10x1,White,12,4.4,1780
+P025,Bluetooth Speaker,Electronics,Audio,SoundWave,89.99,49.99,175,35,S006,0.6,18x8x8,Blue,12,4.6,2890
+P026,Smart Watch,Electronics,Wearables,TechPro,299.99,179.99,92,18,S001,0.05,4x4x1,Black,24,4.5,3450
+P027,Fitness Tracker,Electronics,Wearables,FitTrack,129.99,69.99,168,35,S011,0.03,25x2x1,Blue,12,4.4,1890
+P028,Noise Cancelling Headphones,Electronics,Audio,SoundWave,349.99,199.99,78,15,S006,0.35,20x18x9,Silver,24,4.8,4560
+P029,Gaming Mouse,Electronics,Gaming,GamePro,79.99,44.99,145,30,S012,0.12,13x7x4,RGB,18,4.7,2340
+P030,Mechanical Keyboard RGB,Electronics,Gaming,GamePro,189.99,109.99,87,18,S012,1.1,45x15x4,RGB,24,4.8,3120
+P031,Webcam 4K,Electronics,Accessories,VisionCam,149.99,89.99,124,25,S005,0.25,9x9x7,Black,24,4.6,1670
+P032,Microphone USB,Electronics,Audio,SoundPro,99.99,59.99,156,30,S006,0.4,18x8x8,Black,12,4.5,890
+P033,Ring Light,Electronics,Lighting,StudioLight,59.99,29.99,198,40,S004,1.5,35x35x5,White,12,4.4,1230
+P034,Green Screen,Electronics,Studio,StudioPro,79.99,39.99,145,30,S013,2.1,200x150x5,Green,0,4.3,670
+P035,Capture Card,Electronics,Gaming,GamePro,199.99,119.99,89,18,S012,0.15,12x8x2,Black,24,4.6,1450
+P036,Drawing Tablet,Electronics,Creative,ArtPro,249.99,149.99,67,15,S014,0.9,35x25x1,Black,24,4.7,2340
+P037,3D Printer,Electronics,Manufacturing,MakerPro,499.99,299.99,34,8,S015,12.5,45x45x50,Black,12,4.5,890
+P038,Filament PLA,Supplies,3D Printing,PrintMat,29.99,14.99,420,80,S015,1.0,20x20x8,Various,0,4.4,1120
+P039,Soldering Station,Electronics,Tools,TechTools,89.99,49.99,98,20,S016,2.5,25x20x15,Blue,24,4.6,670
+P040,Multimeter Digital,Electronics,Tools,TechTools,49.99,24.99,167,35,S016,0.3,15x8x4,Yellow,12,4.5,890
+P041,Oscilloscope,Electronics,Tools,TechTools,299.99,179.99,45,10,S016,3.8,32x18x12,Black,24,4.7,450
+P042,Power Supply,Electronics,Tools,TechTools,79.99,44.99,134,28,S016,1.8,20x15x10,Gray,24,4.4,670
+P043,Component Kit,Electronics,Tools,TechTools,39.99,19.99,245,50,S016,0.5,25x18x5,Various,0,4.3,1230

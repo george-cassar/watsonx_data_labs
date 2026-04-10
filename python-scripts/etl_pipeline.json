@@ -1,0 +1,22 @@
+{
+  "application_details": {
+    "application": "/mnts/python-scripts/etl_pipeline.py",
+    "spark_version": "3.5",
+    "conf": {
+      "spark.app.name": "Retail-ETL-Pipeline",
+      "spark.driver.cores": "1",
+      "spark.driver.memory": "4G",
+      "spark.executor.cores": "1",
+      "spark.executor.memory": "4G",
+      "ae.spark.executor.count": "1",
+      "spark.hadoop.wxd.apikey": "ZenApiKey XXXX",
+      "spark.sql.catalog.iceberg_data.client-pool-cache-enabled": "false"
+    }
+  },
+  "volumes": [
+    {
+      "name": "cpd::python-scripts",
+      "mount_path": "/mnts/python-scripts"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "application_details": {
+    "application": "/mnts/python-scripts/read_customers_sample.py",
+    "spark_version": "3.5",
+    "conf": {
+      "spark.app.name": "watsonx.data-Customer-Sample-Reader",
+      "spark.driver.cores": "1",
+      "spark.driver.memory": "4G",
+      "spark.executor.cores": "1",
+      "spark.executor.memory": "4G",
+      "ae.spark.executor.count": "1",
+      "spark.hadoop.wxd.apikey": "ZenApiKey Y3BhZG1pbjppSkVQTWk4aHVYNDZyUkdpVTFRa3hwQ1NKd3c2N2xEYmttTk1yTHZ3Cg==",
+      "spark.sql.catalog.iceberg_data.client-pool-cache-enabled": "false"
+    }
+  },
+  "volumes": [
+    {
+      "name": "cpd::python-scripts",
+      "mount_path": "/mnts/python-scripts"
+    }
+  ]
+}
