@@ -14,9 +14,6 @@ By the end of this lab, you will be able to:
 - Develop PySpark applications for data processing
 - Execute Spark SQL queries on Iceberg tables
 - Submit Spark jobs via UI, CLI, and API
-- Monitor Spark job execution using Spark History Server
-- Optimize Spark applications for performance
-- Use custom Docker images for Spark jobs
 
 ---
 

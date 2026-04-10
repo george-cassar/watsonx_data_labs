@@ -36,10 +36,10 @@ ls -la
 **Expected Files:**
 ```
 .env.template          # Configuration template
-.gitignore            # Git ignore rules
-requirements.txt      # Python dependencies
-presto_connection.py  # Connection wrapper
-query_gold_tier.py    # Query gold tier tables
+.gitignore             # Git ignore rules
+requirements.txt       # Python dependencies
+presto_connection.py   # Connection wrapper
+query_gold_tier.py     # Query gold tier tables
 analytics_dashboard.py # Create visualizations
 ```
 
@@ -398,9 +398,15 @@ xdg-open watsonx_analytics_dashboard_*.html
 start watsonx_analytics_dashboard_*.html
 ```
 
+**Example Dashboard Output:**
+![Interactive HTML Dashboard Example](images/lab08_dashboard_example.png)
+
+
 ### Step 3: Understanding the HTML Dashboard
 
+
 The interactive HTML dashboard features:
+
 
 **IBM Cloud Pak for Data Styling:**
 - Official IBM color palette (IBM Blue #0f62fe, Purple #8a3ffc, Teal #007d79)

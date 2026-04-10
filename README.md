@@ -318,14 +318,14 @@ These training materials are provided for educational purposes. Please:
 |---------|------|---------|
 | 1.0 | March 2026 | Initial release with Labs 1-5 |
 | 1.1 | April 2026 | Labs 6-8 added, comprehensive Python integration |
-| 1.2 | April 2026 | Lab restructuring: removed security/federation labs, enhanced Lab 7 & 8 |
+| 1.2 | April 2026 | Lab restructuring, enhanced Lab 7 & 8 |
 
 ---
 
 ## 📧 Contact
 
 For questions about these labs:
-- **Training Coordinator**: [George Cassasr]
+- **Training Coordinator**: [George Cassar]
 
 ---
 
