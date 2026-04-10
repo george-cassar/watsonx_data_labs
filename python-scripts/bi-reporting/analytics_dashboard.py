@@ -1,6 +1,54 @@
 """
-Analytics Dashboard Module
-Create visualizations from gold tier data
+Analytics Dashboard Module - Static Visualizations
+
+This module creates static PNG visualizations from gold tier data using matplotlib
+and seaborn. It provides a legacy approach to dashboard creation with high-quality
+static images suitable for reports and presentations.
+
+Note: For interactive HTML dashboards, use html_dashboard.py instead.
+
+Key Features:
+    - High-resolution PNG exports (300 DPI)
+    - Professional styling with seaborn
+    - Multiple chart types (line, bar, pie, horizontal bar)
+    - Comprehensive multi-panel dashboard
+    - Automatic timestamp in filenames
+    - Summary report generation
+
+Chart Types:
+    1. Daily Sales Trend: Line chart with trend line
+    2. Customer Segments: Pie chart and bar chart
+    3. Top Products: Horizontal bar chart
+    4. Comprehensive Dashboard: Multi-panel overview
+
+Usage:
+    from analytics_dashboard import AnalyticsDashboard
+    
+    dashboard = AnalyticsDashboard()
+    
+    # Generate individual charts
+    dashboard.create_daily_sales_chart()
+    dashboard.create_customer_segment_chart()
+    dashboard.create_top_products_chart()
+    
+    # Or generate everything at once
+    dashboard.run_complete_analysis()
+
+Output Files:
+    - daily_sales_trend_YYYYMMDD_HHMMSS.png
+    - customer_segments_YYYYMMDD_HHMMSS.png
+    - top_products_YYYYMMDD_HHMMSS.png
+    - comprehensive_dashboard_YYYYMMDD_HHMMSS.png
+
+Dependencies:
+    - pandas: Data manipulation
+    - numpy: Numerical operations
+    - matplotlib: Core plotting library
+    - seaborn: Statistical visualization
+    - query_gold_tier: Data queries
+
+Author: Bob
+Created: 2026
 """
 
 import pandas as pd
@@ -11,26 +59,71 @@ from datetime import datetime
 from query_gold_tier import GoldTierAnalytics
 
 # Set style for better-looking plots
+# whitegrid provides a clean background with subtle gridlines
 sns.set_style("whitegrid")
 plt.rcParams['figure.figsize'] = (12, 8)
 
 
 class AnalyticsDashboard:
     """
-    Create visualizations from gold tier data
+    Create static visualizations from gold tier data.
+    
+    This class generates high-quality PNG visualizations using matplotlib
+    and seaborn. All charts are saved with timestamps for version tracking.
+    
+    Attributes:
+        analytics (GoldTierAnalytics): Connection to gold tier data
+        timestamp (str): Timestamp for file naming (YYYYMMDD_HHMMSS)
+    
+    Methods:
+        create_daily_sales_chart: Line chart for daily sales trends
+        create_customer_segment_chart: Pie and bar charts for segments
+        create_top_products_chart: Horizontal bar chart for top products
+        create_comprehensive_dashboard: Multi-panel dashboard
+        generate_summary_report: Text summary of key metrics
+        run_complete_analysis: Execute complete workflow
     """
     
     def __init__(self):
-        """Initialize analytics connection and timestamp"""
+        """
+        Initialize analytics connection and timestamp.
+        
+        Creates a GoldTierAnalytics instance for data queries and generates
+        a timestamp for consistent file naming across all generated charts.
+        """
         self.analytics = GoldTierAnalytics()
         self.timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
     def create_daily_sales_chart(self):
         """
-        Create line chart for daily sales trends
+        Create line chart for daily sales trends.
+        
+        Generates a two-panel chart showing:
+        1. Daily revenue with trend line
+        2. Daily order count as bar chart
+        
+        Data Processing:
+            - Converts order_date to datetime
+            - Converts numeric columns to float
+            - Calculates linear trend line using numpy polyfit
+        
+        Chart Features:
+            - 45-degree rotated x-axis labels
+            - Grid for easier reading
+            - Trend line in red with dashed style
+            - Professional color scheme
         
         Returns:
-            pandas.DataFrame: Sales trend data
+            pandas.DataFrame: Sales trend data used for the chart
+            
+        Output:
+            Saves: daily_sales_trend_YYYYMMDD_HHMMSS.png (300 DPI)
+            
+        Example:
+            >>> dashboard = AnalyticsDashboard()
+            >>> df = dashboard.create_daily_sales_chart()
+            📊 Creating Daily Sales Trend Chart...
+            ✓ Saved: daily_sales_trend_20260410_143022.png
         """
         print("\n📊 Creating Daily Sales Trend Chart...")
         
@@ -80,10 +173,34 @@ class AnalyticsDashboard:
     
     def create_customer_segment_chart(self):
         """
-        Create pie chart and bar chart for customer segments
+        Create pie chart and bar chart for customer segments.
+        
+        Generates a two-panel chart showing:
+        1. Revenue distribution by segment (pie chart)
+        2. Customer count by segment (bar chart)
+        
+        Data Processing:
+            - Converts customer_count to numeric
+            - Converts total_revenue to numeric
+        
+        Chart Features:
+            - Pie chart with percentage labels
+            - Exploded first segment for emphasis
+            - Shadow effect for depth
+            - Value labels on bars
+            - Consistent color scheme across both charts
         
         Returns:
-            pandas.DataFrame: Customer segment data
+            pandas.DataFrame: Customer segment data used for the chart
+            
+        Output:
+            Saves: customer_segments_YYYYMMDD_HHMMSS.png (300 DPI)
+            
+        Example:
+            >>> dashboard = AnalyticsDashboard()
+            >>> df = dashboard.create_customer_segment_chart()
+            📊 Creating Customer Segment Charts...
+            ✓ Saved: customer_segments_20260410_143022.png
         """
         print("\n📊 Creating Customer Segment Charts...")
         
@@ -133,10 +250,32 @@ class AnalyticsDashboard:
     
     def create_top_products_chart(self):
         """
-        Create horizontal bar chart for top products
+        Create horizontal bar chart for top products.
+        
+        Generates a horizontal bar chart showing top 15 products by revenue.
+        Horizontal orientation allows for longer product names to be displayed.
+        
+        Data Processing:
+            - Converts total_revenue to numeric
+            - Limits to top 15 products
+        
+        Chart Features:
+            - Horizontal bars for better label readability
+            - Value labels with currency formatting
+            - White background boxes for labels
+            - Grid for easier value reading
         
         Returns:
-            pandas.DataFrame: Top products data
+            pandas.DataFrame: Top products data used for the chart
+            
+        Output:
+            Saves: top_products_YYYYMMDD_HHMMSS.png (300 DPI)
+            
+        Example:
+            >>> dashboard = AnalyticsDashboard()
+            >>> df = dashboard.create_top_products_chart()
+            📊 Creating Top Products Chart...
+            ✓ Saved: top_products_20260410_143022.png
         """
         print("\n📊 Creating Top Products Chart...")
         
@@ -177,10 +316,41 @@ class AnalyticsDashboard:
     
     def create_comprehensive_dashboard(self):
         """
-        Create a comprehensive dashboard with multiple visualizations
+        Create a comprehensive dashboard with multiple visualizations.
+        
+        Generates a single multi-panel dashboard containing:
+        1. Daily Revenue Trend (top, full width)
+        2. Customer Segments - Pie Chart (middle left)
+        3. Customer Count by Segment (middle right)
+        4. Top 10 Products (bottom, full width)
+        
+        Layout:
+            Uses GridSpec for flexible layout with 3 rows and 2 columns.
+            Proper spacing (hspace=0.4, wspace=0.35) prevents overlapping.
+        
+        Data Processing:
+            - Converts all dates to datetime
+            - Converts all numeric columns to float
+            - Handles missing values with 'coerce'
+        
+        Chart Features:
+            - Professional color schemes
+            - Currency formatting on axes
+            - Value labels on all charts
+            - Consistent styling across panels
+            - High-resolution output (300 DPI)
         
         Returns:
             str: Filename of saved dashboard
+            
+        Output:
+            Saves: comprehensive_dashboard_YYYYMMDD_HHMMSS.png (300 DPI)
+            
+        Example:
+            >>> dashboard = AnalyticsDashboard()
+            >>> filename = dashboard.create_comprehensive_dashboard()
+            CREATING COMPREHENSIVE ANALYTICS DASHBOARD
+            ✓ Comprehensive dashboard saved: comprehensive_dashboard_20260410_143022.png
         """
         print("\n" + "="*80)
         print("CREATING COMPREHENSIVE ANALYTICS DASHBOARD")
@@ -309,7 +479,40 @@ class AnalyticsDashboard:
     
     def generate_summary_report(self):
         """
-        Generate a text summary report
+        Generate a text summary report of key metrics.
+        
+        Calculates and displays:
+        - Total revenue (last 30 days)
+        - Average daily revenue
+        - Total orders
+        - Average order value
+        - Customer segment breakdown
+        
+        Data Processing:
+            - Converts all numeric columns to float
+            - Handles division by zero for average order value
+            - Formats currency with thousands separators
+        
+        Output:
+            Prints formatted report to console
+            
+        Example:
+            >>> dashboard = AnalyticsDashboard()
+            >>> dashboard.generate_summary_report()
+            ================================================================================
+            ANALYTICS SUMMARY REPORT
+            ================================================================================
+            
+            📈 SALES METRICS (Last 30 Days)
+               Total Revenue: $1,234,567.89
+               Average Daily Revenue: $41,152.26
+               Total Orders: 5,432
+               Average Order Value: $227.23
+            
+            👥 CUSTOMER SEGMENTS
+               High Value: 1,234 customers, $567,890.12 revenue (45.9%)
+               Medium Value: 2,345 customers, $456,789.01 revenue (36.9%)
+               ...
         """
         print("\n" + "="*80)
         print("ANALYTICS SUMMARY REPORT")
@@ -352,7 +555,31 @@ class AnalyticsDashboard:
     
     def run_complete_analysis(self):
         """
-        Run complete analysis workflow
+        Run complete analysis workflow.
+        
+        Executes the full dashboard generation workflow:
+        1. Creates individual charts (daily sales, segments, products)
+        2. Creates comprehensive dashboard
+        3. Generates summary report
+        4. Closes connection
+        
+        This is the main entry point for generating all visualizations
+        in a single operation.
+        
+        Output:
+            - 4 PNG files (individual charts + comprehensive dashboard)
+            - Console summary report
+            
+        Example:
+            >>> dashboard = AnalyticsDashboard()
+            >>> dashboard.run_complete_analysis()
+            ================================================================================
+            STARTING COMPLETE ANALYTICS WORKFLOW
+            ================================================================================
+            📊 Creating Daily Sales Trend Chart...
+            ✓ Saved: daily_sales_trend_20260410_143022.png
+            ...
+            ✓ ANALYTICS WORKFLOW COMPLETED
         """
         print("\n" + "="*80)
         print("STARTING COMPLETE ANALYTICS WORKFLOW")
@@ -385,6 +612,26 @@ class AnalyticsDashboard:
 
 # Main execution
 if __name__ == "__main__":
+    """
+    Test script to generate all static visualizations.
+    
+    Run this script directly to create all dashboard visualizations:
+        python analytics_dashboard.py
+    
+    This will:
+        1. Connect to watsonx.data
+        2. Query gold tier tables
+        3. Generate 4 PNG files
+        4. Display summary report
+        5. Close connection
+    
+    Prerequisites:
+        - Lab 6 ETL pipeline executed
+        - Gold tier tables exist
+        - .env file configured
+        - Virtual environment activated
+        - All dependencies installed
+    """
     try:
         dashboard = AnalyticsDashboard()
         dashboard.run_complete_analysis()
@@ -400,5 +647,3 @@ if __name__ == "__main__":
         print("  2. All dependencies are installed")
         print("  3. .env file is configured correctly")
         print("  4. Gold tier tables exist from Lab 6")
-
-# Made with Bob

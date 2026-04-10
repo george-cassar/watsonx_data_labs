@@ -1,8 +1,9 @@
 # Lab 2: Catalog and Table Creation
 
-**Duration:** 60 minutes  
-**Difficulty:** Beginner to Intermediate  
+**Duration:** 60 minutes
+**Difficulty:** Beginner to Intermediate
 **Prerequisites:** Completion of Lab 1
+**Last Updated:** April 2026
 
 ---
 

@@ -6,7 +6,7 @@ Welcome to the watsonx.data hands-on training labs! These labs are designed to p
 
 ## 📋 Lab Overview
 
-This training consists of 10 comprehensive hands-on labs that progressively build your skills with watsonx.data:
+This training consists of 8 comprehensive hands-on labs that progressively build your skills with watsonx.data:
 
 | Lab # | Title | Duration | Difficulty | Topics Covered |
 |-------|-------|----------|------------|----------------|
@@ -15,11 +15,11 @@ This training consists of 10 comprehensive hands-on labs that progressively buil
 | **Lab 3** | [Data Ingestion with Presto](LAB03_Data_Ingestion_Presto.md) | 75 min | Intermediate | INSERT statements, CSV/Parquet loading, CTAS, bulk loading, MOR vs COW |
 | **Lab 4** | [Partitioning and Optimization](LAB04_Partitioning_Optimization.md) | 60 min | Intermediate-Advanced | Partitioning strategies, bucketing, sorting, query optimization, caching |
 | **Lab 5** | [Time Travel and Rollback Operations](LAB05_Time_Travel_Rollback.md) | 60 min | Intermediate | Time travel queries, snapshots, rollback, data recovery, auditing |
-| **Lab 6** | [Spark Application Development](LAB06_Spark_Application_Development.md) | 90 min | Advanced | Spark engines, PySpark, Spark SQL, job execution, monitoring |
-| **Lab 7** | [Data Compaction and Maintenance](LAB07_Data_Compaction_Maintenance.md) | 60 min | Intermediate-Advanced | File compaction, manifest rewriting, orphan file removal, optimization |
-| **Lab 8** | [Third-party Tool Integration](LAB08_Third_Party_Integration.md) | 60 min | Intermediate | JDBC/ODBC connections, BI tools, Python/Java clients |
+| **Lab 6** | [Spark Application Development](LAB06_Spark_Application_Development.md) | 90 min | Advanced | Spark engines, PySpark, Spark SQL, ETL pipelines, job execution, monitoring |
+| **Lab 7** | [Data Compaction and Maintenance](LAB07_Data_Compaction_Maintenance.md) | 45 min | Intermediate | MOR vs COW, file compaction, manifest optimization, table maintenance |
+| **Lab 8** | [Python Integration with watsonx.data](LAB08_Third_Party_Integration.md) | 60 min | Intermediate | Python environment, Presto connectivity, pandas analysis, interactive dashboards |
 
-**Total Duration:** ~8-9 hours
+**Total Duration:** ~7.5 hours
 
 ---
 
@@ -146,7 +146,7 @@ products (1) ──────< (N) orders
 - Sample data is generated within the labs using SQL
 - No external files required for basic exercises
 
-**For Advanced Labs (Labs 6-10):**
+**For Advanced Labs (Labs 6-8):**
 - Use CSV files for data ingestion exercises
 - Use Parquet files for performance-optimized operations
 - Refer to [sample_data/README.md](sample_data/README.md) for detailed schemas and usage examples
@@ -244,10 +244,10 @@ Upon completing all labs, you will have:
 - ✓ Understanding of lakehouse architecture
 - ✓ Skills in data ingestion and management
 - ✓ Knowledge of query optimization
-- ✓ Ability to implement security policies
-- ✓ Experience with Spark integration
-- ✓ Proficiency in data maintenance
-- ✓ Capability to integrate with external tools
+- ✓ Mastery of time travel and data recovery
+- ✓ Experience with Spark ETL pipeline development
+- ✓ Proficiency in data compaction and maintenance
+- ✓ Capability to build Python analytics solutions with interactive dashboards
 
 ### Next Steps After Labs
 1. Review the [watsonx.data documentation](https://www.ibm.com/docs/en/watsonxdata)
@@ -317,7 +317,8 @@ These training materials are provided for educational purposes. Please:
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | March 2026 | Initial release with Labs 1-5 |
-| 1.1 | April 2026 | Labs 6-10 added |
+| 1.1 | April 2026 | Labs 6-8 added, comprehensive Python integration |
+| 1.2 | April 2026 | Lab restructuring: removed security/federation labs, enhanced Lab 7 & 8 |
 
 ---
 

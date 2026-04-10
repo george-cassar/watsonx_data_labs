@@ -1,8 +1,9 @@
 # Lab 1: Initial Configuration and Interface Exploration
 
-**Duration:** 45 minutes  
-**Difficulty:** Beginner  
+**Duration:** 45 minutes
+**Difficulty:** Beginner
 **Prerequisites:** Access to watsonx.data environment
+**Last Updated:** April 2026
 
 ---
 

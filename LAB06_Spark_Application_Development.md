@@ -1,8 +1,9 @@
 # Lab 6: Spark Application Development
 
-**Duration:** 90 minutes  
-**Difficulty:** Advanced  
+**Duration:** 90 minutes
+**Difficulty:** Advanced
 **Prerequisites:** Completion of Labs 1-5, Python 3.8+, Basic PySpark knowledge
+**Last Updated:** April 2026
 
 ---
 

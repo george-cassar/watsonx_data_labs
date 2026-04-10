@@ -1,8 +1,9 @@
 # Lab 5: Time Travel and Rollback Operations
 
-**Duration:** 60 minutes  
-**Difficulty:** Intermediate  
+**Duration:** 60 minutes
+**Difficulty:** Intermediate
 **Prerequisites:** Completion of Labs 1-4
+**Last Updated:** April 2026
 
 ---
 

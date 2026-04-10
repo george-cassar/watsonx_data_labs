@@ -1,8 +1,9 @@
 # Lab 8: Python Integration with watsonx.data
 
-**Duration:** 60 minutes  
-**Difficulty:** Intermediate  
+**Duration:** 60 minutes
+**Difficulty:** Intermediate
 **Prerequisites:** Completion of Labs 1-7, Python 3.8+, Gold tier tables from Lab 6
+**Last Updated:** April 2026
 
 ---
 
@@ -501,118 +502,6 @@ daily_sales = self.analytics.get_sales_trends(days=60)  # 60 days instead of 30
 top_products = self.analytics.get_top_products(limit=20)  # Top 20 instead of 10
 ```
 
-**Modify Colors:**
-```python
-# Update IBM_COLORS dictionary
-IBM_COLORS = {
-    'primary_blue': '#0f62fe',  # Change to your preferred color
-    'purple': '#8a3ffc',
-    # ... other colors
-}
-```
-
-**Add Custom Metrics:**
-```python
-# In generate_html() method, add new metric card
-<div class="metric-card green">
-    <div class="metric-label">Your Custom Metric</div>
-    <div class="metric-value">{your_value}</div>
-</div>
-```
-
----
-
-## Part 5: Extending the Analysis (Optional)
-
-### Add Custom Queries
-
-Edit `query_gold_tier.py` to add new analysis methods:
-
-```python
-def get_monthly_revenue(self):
-    """Get monthly revenue summary"""
-    query = """
-    SELECT
-        DATE_TRUNC('month', order_date) as month,
-        COUNT(*) as order_count,
-        ROUND(SUM(total_revenue), 2) as monthly_revenue
-    FROM gold_daily_sales
-    GROUP BY DATE_TRUNC('month', order_date)
-    ORDER BY month DESC
-    LIMIT 12
-    """
-    return self.query_to_dataframe(query)
-```
-
-### Add Custom Visualizations to HTML Dashboard
-
-Edit `html_dashboard.py` to add new charts to the dashboard:
-
-```python
-def create_monthly_trend_chart(self):
-    """Create interactive monthly revenue trend chart"""
-    df = self.analytics.get_monthly_revenue()
-    
-    # Convert to numeric
-    df['monthly_revenue'] = pd.to_numeric(df['monthly_revenue'], errors='coerce')
-    
-    fig = go.Figure()
-    
-    fig.add_trace(go.Bar(
-        x=df['month'],
-        y=df['monthly_revenue'],
-        name='Monthly Revenue',
-        marker_color=self.IBM_COLORS['blue'],
-        hovertemplate='<b>%{x}</b><br>Revenue: $%{y:,.2f}<extra></extra>'
-    ))
-    
-    fig.update_layout(
-        title='Monthly Revenue Trend',
-        xaxis_title='Month',
-        yaxis_title='Revenue ($)',
-        font=dict(family='IBM Plex Sans', size=12),
-        plot_bgcolor='white',
-        hovermode='x unified'
-    )
-    
-    return fig.to_html(full_html=False, include_plotlyjs=False)
-```
-
-Then add the new chart to the `generate_html()` method:
-
-```python
-# Add after existing charts
-monthly_chart = self.create_monthly_trend_chart()
-
-# Include in HTML template
-html_content = f"""
-    ...
-    <div class="chart-container">
-        <h2>Monthly Revenue Trend</h2>
-        {monthly_chart}
-    </div>
-    ...
-"""
-```
-
-### Customize IBM Styling
-
-Modify colors in `html_dashboard.py`:
-
-```python
-IBM_COLORS = {
-    'blue': '#0f62fe',      # IBM Blue
-    'purple': '#8a3ffc',    # IBM Purple
-    'cyan': '#1192e8',      # IBM Cyan
-    'teal': '#009d9a',      # IBM Teal
-    'green': '#198038',     # IBM Green
-    'magenta': '#ee5396',   # IBM Magenta
-    'red': '#da1e28',       # IBM Red
-    'orange': '#ff832b',    # IBM Orange
-    'gray': '#525252'       # IBM Gray
-}
-```
-
 ---
 
 ## Troubleshooting
@@ -684,9 +573,6 @@ Confirm you have completed the following:
 - [ ] Queried gold tier tables and viewed results
 - [ ] Generated interactive HTML dashboard
 - [ ] Opened dashboard in web browser
-- [ ] Explored interactive features (zoom, hover, pan)
-- [ ] Understood IBM Cloud Pak for Data styling
-- [ ] Learned how to customize the dashboard
 
 ---
 
@@ -748,37 +634,6 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
-
-### Security
-
-✅ **Never commit `.env` file** - contains credentials
-
-✅ **Use `.env.template`** for sharing configuration structure
-
-✅ **Rotate credentials** if accidentally exposed
-
-✅ **Use least privilege** - only grant necessary permissions
-
-### Code Organization
-
-✅ **Modular design** - separate concerns (connection, queries, visualization)
-
-✅ **Reusable components** - connection wrapper can be used in other projects
-
-✅ **Error handling** - graceful failure with helpful messages
-
-✅ **Documentation** - comments and docstrings explain functionality
-
-### Performance
-
-✅ **Close connections** when done to free resources
-
-✅ **Limit result sets** for large tables
-
-✅ **Use appropriate time ranges** for trend analysis
-
-✅ **Cache results** if running multiple analyses on same data
-
 ---
 
 ## Summary
@@ -797,17 +652,6 @@ In this lab, you learned how to:
 
 ✅ **Create interactive dashboard**: Built professional HTML dashboard with IBM styling
 
-✅ **Build workflows**: Integrated queries, analysis, and visualization
-
-### Key Takeaways
-
-1. **Python Integration**: Python provides powerful tools for watsonx.data analytics
-2. **Virtual Environments**: Isolate dependencies for reproducible projects
-3. **Gold Tier Value**: Pre-aggregated tables enable fast analytics
-4. **Interactive Dashboards**: Plotly enables rich, interactive visualizations
-5. **IBM Styling**: Professional appearance matching Cloud Pak for Data design
-6. **Automation**: Complete workflows can be scheduled and automated
-7. **Extensibility**: Framework can be extended for custom analyses
 
 ---
 

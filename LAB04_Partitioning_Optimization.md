@@ -1,8 +1,9 @@
 # Lab 4: Partitioning and Optimization
 
-**Duration:** 60 minutes  
-**Difficulty:** Intermediate to Advanced  
+**Duration:** 60 minutes
+**Difficulty:** Intermediate to Advanced
 **Prerequisites:** Completion of Labs 1-3
+**Last Updated:** April 2026
 
 ---
 

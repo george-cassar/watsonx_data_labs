@@ -1,8 +1,9 @@
 # Lab 7: Data Compaction and Maintenance
 
-**Duration:** 45 minutes  
-**Difficulty:** Intermediate  
+**Duration:** 45 minutes
+**Difficulty:** Intermediate
 **Prerequisites:** Completion of Labs 1-6, Understanding of Iceberg table internals
+**Last Updated:** April 2026
 
 ---
 

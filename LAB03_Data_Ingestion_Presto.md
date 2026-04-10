@@ -1,8 +1,9 @@
 # Lab 3: Data Ingestion with Presto
 
-**Duration:** 75 minutes  
-**Difficulty:** Intermediate  
+**Duration:** 75 minutes
+**Difficulty:** Intermediate
 **Prerequisites:** Completion of Lab 1 and Lab 2
+**Last Updated:** April 2026
 
 ---
 
