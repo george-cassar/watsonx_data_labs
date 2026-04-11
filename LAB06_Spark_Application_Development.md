@@ -514,7 +514,7 @@ export BUCKET_NAME=your-bucket
 # Submit Customer Analysis Job
 cpdctl wx-data sparkjob create \
   --engine-id $SPARK_ENGINE_ID \
-  --path s3://apps-bucket/python-scripts/customer_analysis.py \
+  --path s3a://apps-bucket/python-scripts/customer_analysis.py \
   --bucket-name $BUCKET_NAME \
   --conf '{
     "spark.app.name":"Customer Analysis Job",
@@ -526,7 +526,38 @@ cpdctl wx-data sparkjob create \
   }' \
   --api-key $API_KEY \
   --instance-id $INSTANCE_ID
+
+# Example
+❯ ./cpdctl wx-data sparkjob create \
+    --engine-id spark531 \
+    --path s3a://apps-bucket/python-scripts/customer_analysis.py \
+    --bucket-name apps-bucket \
+   --conf '{
+    "spark.app.name":"Customer Analysis Job",
+    "spark.driver.memory":"2g",
+    "spark.driver.cores":"1",
+    "spark.executor.memory":"2g",
+    "spark.executor.cores":"1",
+    "spark.executor.instances":"1"
+  }' \
+  --api-key xxxxxxxx \
+  --instance-id 1770581033315305
+...
+...
+
+Spark application submitted successfully
+
+Application ID: a77988ab-7832-4326-b548-d04b4e9e1e9c
+Spark Version: 3.4
+State: ACCEPTED
+Template ID: spark-3.4-cp4d-wxd-template
+
+Run below command to get the spark application status:
+
+cpdctl wx-data sparkjob get --engine-id spark531 --application-id a77988ab-7832-4326-b548-d04b4e9e1e9c
 ```
+**Hint:**
+The s3 bucket should be registered and associated with the Spark engine before running the command. 
 
 **Command Options:**
 
