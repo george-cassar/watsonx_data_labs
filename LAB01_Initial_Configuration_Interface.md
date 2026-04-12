@@ -385,9 +385,9 @@ Average query execution time: _________________
      --user lab-user
    ```
 
-3. Test cpdctl:
+3. Test cpdctl on watsonx.data by listing available engines:
    ```bash
-   cpdctl environment list --profile lab-profile
+   cpdctl wx-data engine list
    ```
 
 ---
