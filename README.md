@@ -6,7 +6,7 @@ Welcome to the watsonx.data hands-on training labs! These labs are designed to p
 
 ## 📋 Lab Overview
 
-This training consists of 8 comprehensive hands-on labs that progressively build your skills with watsonx.data:
+This training consists of 9 comprehensive hands-on labs that progressively build your skills with watsonx.data:
 
 | Lab # | Title | Duration | Difficulty | Topics Covered |
 |-------|-------|----------|------------|----------------|
@@ -18,8 +18,9 @@ This training consists of 8 comprehensive hands-on labs that progressively build
 | **Lab 6** | [Spark Application Development](LAB06_Spark_Application_Development.md) | 90 min | Advanced | Spark engines, PySpark, Spark SQL, ETL pipelines, job execution, monitoring |
 | **Lab 7** | [Data Compaction and Maintenance](LAB07_Data_Compaction_Maintenance.md) | 45 min | Intermediate | MOR vs COW, file compaction, manifest optimization, table maintenance |
 | **Lab 8** | [Python Integration with watsonx.data](LAB08_Third_Party_Integration.md) | 60 min | Intermediate | Python environment, Presto connectivity, pandas analysis, interactive dashboards |
+| **Lab 9** | [Spark Custom Runtime Image Testing](LAB09_Spark_Custom_Runtime_Image_Testing.md) | 60 min | Advanced | Custom Spark runtime images, Docker/Podman, OpenShift, registry publishing, Python package customization |
 
-**Total Duration:** ~7.5 hours
+**Total Duration:** ~8.5 hours
 
 ---
 
@@ -37,10 +38,11 @@ Continue with Labs 4-5 for advanced operations:
 5. Lab 5: Use time travel and recovery features
 
 ### For Advanced Users
-Complete Labs 6-8 for expert-level skills:
+Complete Labs 6-9 for expert-level skills:
 - Lab 6: Develop Spark applications
 - Lab 7: Maintain and optimize tables
 - Lab 8: Integrate with external tools
+- Lab 9: Build and validate custom Spark runtime images
 
 ---
 
@@ -54,10 +56,12 @@ Complete Labs 6-8 for expert-level skills:
 - Familiarity with data warehousing concepts
 
 ### Optional Tools
-- Python 3.8+ (for Lab 6 and Lab 8)
+- Python 3.8+ (for Lab 6, Lab 8, and Lab 9)
 - Java 11+ (for Lab 1 and Lab 8)
+- Docker or Podman (for Lab 9)
+- OpenShift CLI (`oc`) and `jq` (for Lab 9)
 - BI tool (Tableau, PowerBI, or similar) for Lab 8
-- Visual Studio Code or similar IDE (for Lab 6)
+- Visual Studio Code or similar IDE (for Lab 6 and Lab 9)
 
 ### Account Setup
 Before starting the labs, ensure you have:
@@ -146,7 +150,7 @@ products (1) ──────< (N) orders
 - Sample data is generated within the labs using SQL
 - No external files required for basic exercises
 
-**For Advanced Labs (Labs 6-8):**
+**For Advanced Labs (Labs 6-9):**
 - Use CSV files for data ingestion exercises
 - Use Parquet files for performance-optimized operations
 - Refer to [sample_data/README.md](sample_data/README.md) for detailed schemas and usage examples
@@ -234,6 +238,7 @@ Use this checklist to track your lab completion:
 - [ ] Lab 6: Spark Application Development
 - [ ] Lab 7: Data Compaction and Maintenance
 - [ ] Lab 8: Third-party Tool Integration
+- [ ] Lab 9: Spark Custom Runtime Image Testing
 
 ---
 
@@ -248,6 +253,7 @@ Upon completing all labs, you will have:
 - ✓ Experience with Spark ETL pipeline development
 - ✓ Proficiency in data compaction and maintenance
 - ✓ Capability to build Python analytics solutions with interactive dashboards
+- ✓ Ability to create, publish, and validate custom Spark runtime images
 
 ### Next Steps After Labs
 1. Review the [watsonx.data documentation](https://www.ibm.com/docs/en/watsonxdata)
@@ -319,6 +325,7 @@ These training materials are provided for educational purposes. Please:
 | 1.0 | March 2026 | Initial release with Labs 1-5 |
 | 1.1 | April 2026 | Labs 6-8 added, comprehensive Python integration |
 | 1.2 | April 2026 | Lab restructuring, enhanced Lab 7 & 8 |
+| 1.3 | April 2026 | Lab 9 added for Spark custom runtime image testing |
 
 ---
 

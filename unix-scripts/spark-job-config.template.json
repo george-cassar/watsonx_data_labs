@@ -1,0 +1,16 @@
+{
+  "application_details": {
+    "application": "/opt/ibm/spark/examples/src/main/test-app.py",
+    "arguments": [],
+    "conf": {
+      "ae.spark.kubernetes.container.image": "<YOUR_REGISTRY>/<YOUR_IMAGE_NAME>:<YOUR_IMAGE_TAG>",
+      "ae.spark.kubernetes.container.registry.name": "<registry-name>",
+      "ae.spark.kubernetes.container.registry.username": "<username>",
+      "ae.spark.kubernetes.container.registry.password": "<password>",
+      "spark.driver.memory": "2g",
+      "spark.executor.memory": "2g",
+      "spark.executor.cores": "1",
+      "spark.executor.instances": "2"
+    }
+  }
+}
