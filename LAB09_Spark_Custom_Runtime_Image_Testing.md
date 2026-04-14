@@ -72,7 +72,6 @@ cat > install-os-packages.sh << 'EOF'
 set -e -o pipefail
 
 # Install operating system packages
-microdnf update -y
 microdnf install -y vim
 
 # Add any other OS packages your application needs

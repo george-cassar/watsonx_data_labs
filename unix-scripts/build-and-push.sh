@@ -127,41 +127,7 @@ else
     exit 1
 fi
 
-# Step 3: Test image (optional)
-echo ""
-read -p "Test the image before pushing? (y/n) [y]: " test_image
-test_image="${test_image:-y}"
-
-if [[ "$test_image" =~ ^[Yy]$ ]]; then
-    echo "=== Testing Image ==="
-    echo "Running container to verify customizations..."
-    
-    # Test if vim is installed (from install-os-packages.sh)
-    if $CONTAINER_CMD run --rm "$FULL_IMAGE_NAME" which vim &> /dev/null; then
-        echo -e "${GREEN}✓ Custom OS packages verified (vim found)${NC}"
-    else
-        echo -e "${YELLOW}⚠ Could not verify vim installation${NC}"
-    fi
-    
-    # Test if Python packages are installed
-    if $CONTAINER_CMD run --rm "$FULL_IMAGE_NAME" python3 -c "import pandas; import numpy; import sklearn" &> /dev/null; then
-        echo -e "${GREEN}✓ Custom Python packages verified${NC}"
-        $CONTAINER_CMD run --rm "$FULL_IMAGE_NAME" python3 -c "import pandas; import numpy; import sklearn; print(f'pandas: {pandas.__version__}, numpy: {numpy.__version__}')"
-    else
-        echo -e "${YELLOW}⚠ Could not verify Python packages${NC}"
-    fi
-    
-    # Test if custom JARs directory exists
-    if $CONTAINER_CMD run --rm "$FULL_IMAGE_NAME" ls /opt/ibm/spark/external-jars/ &> /dev/null; then
-        echo -e "${GREEN}✓ External JARs directory exists${NC}"
-        echo "Contents:"
-        $CONTAINER_CMD run --rm "$FULL_IMAGE_NAME" ls -lh /opt/ibm/spark/external-jars/
-    else
-        echo -e "${YELLOW}⚠ Could not verify external JARs directory${NC}"
-    fi
-fi
-
-# Step 4: Login to registry
+# Step 3: Login to registry
 echo ""
 echo "=== Step 3: Registry Authentication ==="
 
@@ -177,7 +143,7 @@ else
     echo "No authentication required (public registry)"
 fi
 
-# Step 5: Push image
+# Step 4: Push image
 echo ""
 echo "=== Step 4: Pushing Image to Registry ==="
 echo "Pushing: $FULL_IMAGE_NAME"
@@ -189,7 +155,7 @@ else
     exit 1
 fi
 
-# Step 6: Verify push
+# Step 5: Verify push
 echo ""
 echo "=== Step 5: Verifying Push ==="
 echo "Attempting to pull image from registry..."
