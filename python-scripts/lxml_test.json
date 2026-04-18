@@ -1,0 +1,24 @@
+{
+  "application_details": {
+    "application": "/mnts/python-scripts/lxml_test.py",
+    "spark_version": "3.5",
+    "conf": {
+      "spark.app.name": "LXML-Library-Test",
+      "spark.driver.cores": "1",
+      "spark.driver.memory": "2G",
+      "spark.executor.cores": "1",
+      "spark.executor.memory": "2G",
+      "ae.spark.executor.count": "1",
+      "spark.hadoop.wxd.apikey": "ZenApiKey XXXX",
+      "ae.spark.kubernetes.container.image":"gcassar/wxdata-spark-custom-runtime:v1.1",
+      "ae.spark.kubernetes.container.registry.name": "docker.io",
+      "spark.sql.catalog.iceberg_data.client-pool-cache-enabled": "false"
+    }
+  },
+  "volumes": [
+    {
+      "name": "cpd::python-scripts",
+      "mount_path": "/mnts/python-scripts"
+    }
+  ]
+}
