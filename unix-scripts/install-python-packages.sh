@@ -45,7 +45,7 @@ set -e -o pipefail
 
 # Target installation directory
 # This is the site-packages directory for Python 3.11 in the Spark runtime
-TARGET_DIR="/opt/ibm/conda/miniforgePy3.11/lib/python3.11/site-packages"
+# TARGET_DIR="/opt/ibm/conda/miniforgePy3.11/lib/python3.11/site-packages"
 
 # ============================================================================
 # Installation Process
@@ -54,12 +54,13 @@ TARGET_DIR="/opt/ibm/conda/miniforgePy3.11/lib/python3.11/site-packages"
 echo "============================================================================"
 echo "Installing Custom Python Packages"
 echo "============================================================================"
-echo "Target Directory: $TARGET_DIR"
+# echo "Target Directory: $TARGET_DIR"
 echo ""
 
 # Install pip packages to the specified site-packages directory
 # --no-cache-dir: Don't cache downloaded packages (reduces image size)
 # --target: Install packages to the specified directory
+# pip install --no-cache-dir --target="$TARGET_DIR" \
 pip install --no-cache-dir --target="$TARGET_DIR" \
     pandas==2.0.3 \
     numpy==1.24.3 \
@@ -67,7 +68,8 @@ pip install --no-cache-dir --target="$TARGET_DIR" \
 
 echo ""
 echo "============================================================================"
-echo "✓ Packages installed successfully to $TARGET_DIR"
+# echo "✓ Packages installed successfully to $TARGET_DIR"
+echo "✓ Packages installed successfully"
 echo "============================================================================"
 
 # ============================================================================
