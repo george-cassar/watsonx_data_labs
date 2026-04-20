@@ -61,7 +61,7 @@ echo ""
 # --no-cache-dir: Don't cache downloaded packages (reduces image size)
 # --target: Install packages to the specified directory
 # pip install --no-cache-dir --target="$TARGET_DIR" \
-pip install --no-cache-dir --target="$TARGET_DIR" \
+pip install --no-cache-dir \
     pandas==2.0.3 \
     numpy==1.24.3 \
     lxml==5.1.0
