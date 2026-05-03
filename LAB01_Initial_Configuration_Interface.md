@@ -310,7 +310,8 @@ Average query execution time: _________________
    tar -xvf cpd-cli-linux-EE-<version>.tgz
    
    # Move to a directory in your PATH
-   sudo mv cpd-cli /usr/local/bin/
+   cd cpd-cli-linux-EE-<version>
+   sudo mv * /usr/local/bin/
    
    # Make it executable
    sudo chmod +x /usr/local/bin/cpd-cli
