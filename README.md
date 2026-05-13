@@ -332,7 +332,7 @@ These training materials are provided for educational purposes. Please:
 ## 📧 Contact
 
 For questions about these labs:
-- **Training Coordinator**: [George Cassar]
+- **Training Coordinator**: [George Cassar, Arancha Ocana]
 
 ---
 
