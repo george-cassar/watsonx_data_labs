@@ -119,7 +119,7 @@ Creates dedicated `postgresdb` project/namespace.
 ⚠️ **IMPORTANT:** Change these credentials in production!
 
 ### 3. PersistentVolumeClaim (03-pvc.yaml)
-- **Size:** 10Gi
+- **Size:** 20Gi
 - **Access Mode:** ReadWriteOnce
 - **Storage Class:** Default (uses cluster default)
 
