@@ -1,0 +1,30 @@
+{
+  "application_details": {
+    "application": "/mnts/spark-apps/apps/create_presto_view.py",
+    "spark_version": "3.5",
+    "conf": {
+      "spark.app.name": "watsonx.data-Presto-View-Creator",
+      "spark.driver.cores": "1",
+      "spark.driver.memory": "2G",
+      "spark.executor.cores": "1",
+      "spark.executor.memory": "2G",
+      "ae.spark.executor.count": "1",
+
+      "spark.hadoop.wxd.apikey":                                    "${WXD_APIKEY}",
+      "spark.sql.catalog.iceberg_data.client-pool-cache-enabled":   "false",
+
+      "spark.presto.host":     "${PRESTO_HOST}",
+      "spark.presto.port":     "${PRESTO_PORT}",
+      "spark.presto.user":     "${PRESTO_USER}",
+      "spark.presto.password": "${PRESTO_PASSWORD}",
+      "spark.presto.catalog":  "lab_catalog01",
+      "spark.presto.schema":   "test"
+    }
+  },
+  "volumes": [
+    {
+      "name": "ibm-hub::spark-apps",
+      "mount_path": "/mnts/spark-apps"
+    }
+  ]
+}

@@ -22,4 +22,8 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
+# Spark job local copies (contain environment-specific credentials)
+*_payload.local.json
+
+# Bob
 .bob

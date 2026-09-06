@@ -9,7 +9,7 @@
       "spark.executor.cores": "1",
       "spark.executor.memory": "4G",
       "ae.spark.executor.count": "1",
-      "spark.hadoop.wxd.apikey": "ZenApiKey Y3BhZG1pbjppSkVQTWk4aHVYNDZyUkdpVTFRa3hwQ1NKd3c2N2xEYmttTk1yTHZ3Cg==",
+      "spark.hadoop.wxd.apikey": "ZenApiKey XXXX",
       "spark.sql.catalog.iceberg_data.client-pool-cache-enabled": "false"
     }
   },

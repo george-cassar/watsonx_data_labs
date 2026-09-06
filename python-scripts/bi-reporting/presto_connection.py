@@ -29,8 +29,7 @@ Environment Variables Required:
     PRESTO_SCHEMA: Schema name (default: analytics)
     PRESTO_USE_SSL: Use SSL connection (default: true)
 
-Author: Bob
-Created: 2026
+Created: 2025
 """
 
 import prestodb

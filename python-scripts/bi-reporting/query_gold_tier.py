@@ -42,8 +42,7 @@ Dependencies:
     - pandas: For DataFrame manipulation
     - tabulate: For formatted console output
 
-Author: Bob
-Created: 2026
+Created: 2025
 """
 
 import pandas as pd

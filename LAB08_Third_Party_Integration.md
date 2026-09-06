@@ -685,25 +685,15 @@ In this lab, you learned how to:
 
 ## Next Steps
 
-Congratulations! You have completed all labs in the watsonx.data training series.
+Proceed to **[Lab 9: Spark Custom Runtime Image Testing](LAB09_Spark_Custom_Runtime_Image_Testing.md)** where you will:
 
-**What's Next:**
-- Apply these skills to your own use cases
-- Explore advanced watsonx.data features
-- Build production data pipelines
-- Integrate with your organization's BI tools
-- Automate analytics workflows
-- Create custom dashboards for stakeholders
-
-**Suggested Projects:**
-1. Create scheduled reports that run daily/weekly
-2. Build interactive dashboards with Plotly
-3. Integrate with Jupyter Notebooks for exploratory analysis
-4. Connect to other BI tools (Tableau, Power BI)
-5. Implement real-time analytics with streaming data
+- Build a custom Spark runtime image
+- Add Python packages and JAR files
+- Publish the image to a container registry
+- Submit and verify a Spark application using the custom runtime
 
 ---
 
 **Lab Completed!** ✓
 
-Please inform your instructor that you have completed Lab 8 and the entire watsonx.data training series.
+Please inform your instructor that you have completed Lab 8 before proceeding to Lab 9.

@@ -99,7 +99,7 @@ def create_spark_session() -> SparkSession:
     Example:
         >>> spark = create_spark_session()
         >>> spark.version
-        '3.3.0'
+        '3.5.x'
     """
     return (
         SparkSession.builder

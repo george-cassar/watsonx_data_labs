@@ -42,11 +42,12 @@ Before you begin, ensure you have:
 
 ### Step 1: Setup Your Environment
 
-Run the interactive setup script from the [`unix-scripts/`](unix-scripts/) directory to configure your environment:
+Navigate to the [`unix-scripts/`](unix-scripts/) directory and run the interactive setup script:
 
 ```bash
-chmod +x unix-scripts/setup-environment.sh
-./unix-scripts/setup-environment.sh
+cd unix-scripts/
+chmod +x setup-environment.sh
+./setup-environment.sh
 ```
 
 This will:
@@ -82,11 +83,11 @@ chmod +x install-os-packages.sh
 
 #### 2.2 Review or customize `install-python-packages.sh`
 
-A starter version already exists at [`unix-scripts/install-python-packages.sh`](unix-scripts/install-python-packages.sh). You can reuse it directly or adapt it locally as needed:
+A starter version already exists at [`unix-scripts/install-python-packages.sh`](unix-scripts/install-python-packages.sh). You can reuse it directly or adapt it locally as needed (run from inside `unix-scripts/`):
 
 ```bash
-cp unix-scripts/install-python-packages.sh ./install-python-packages.sh
-chmod +x install-python-packages.sh
+cp install-python-packages.sh ../install-python-packages.sh
+chmod +x ../install-python-packages.sh
 ```
 
 #### 2.3 Create `install-jar.sh`
@@ -124,11 +125,11 @@ EOF
 
 ### Step 3: Build and Push Your Custom Image
 
-Use the automated build script from [`unix-scripts/build-and-push.sh`](unix-scripts/build-and-push.sh):
+Use the automated build script from [`unix-scripts/build-and-push.sh`](unix-scripts/build-and-push.sh). Run from inside `unix-scripts/`:
 
 ```bash
-chmod +x unix-scripts/build-and-push.sh
-./unix-scripts/build-and-push.sh
+chmod +x build-and-push.sh
+./build-and-push.sh
 ```
 
 This script will:
@@ -189,9 +190,9 @@ Interactive script that:
 - Verifies prerequisites
 - Provides next steps
 
-**Usage:**
+**Usage** (from inside `unix-scripts/`):
 ```bash
-./unix-scripts/setup-environment.sh
+./setup-environment.sh
 source .env.spark-custom-runtime
 ```
 
@@ -204,9 +205,9 @@ Automated build script that:
 - Pushes to registry
 - Verifies deployment
 
-**Usage:**
+**Usage** (from inside `unix-scripts/`):
 ```bash
-./unix-scripts/build-and-push.sh
+./build-and-push.sh
 ```
 
 ### `install-python-packages.sh`
@@ -215,10 +216,10 @@ Reusable helper script that:
 - Verifies the installed package versions
 - Can be copied into your build context before building the image
 
-**Usage:**
+**Usage** (from inside `unix-scripts/`):
 ```bash
-cp unix-scripts/install-python-packages.sh ./install-python-packages.sh
-chmod +x install-python-packages.sh
+cp install-python-packages.sh ../install-python-packages.sh
+chmod +x ../install-python-packages.sh
 ```
 
 ## 📝 Example Workflow
@@ -226,18 +227,19 @@ chmod +x install-python-packages.sh
 Here's a typical testing workflow:
 
 ```bash
-# 1. Setup environment
-./unix-scripts/setup-environment.sh
+# 1. Setup environment (run from unix-scripts/)
+cd unix-scripts/
+./setup-environment.sh
 source .env.spark-custom-runtime
 
 # 2. Reuse provided Python package installer
-cp unix-scripts/install-python-packages.sh ./install-python-packages.sh
-chmod +x install-python-packages.sh
+cp install-python-packages.sh ../install-python-packages.sh
+chmod +x ../install-python-packages.sh
 
 # 3. Create remaining customization files (see Step 2 above)
 
-# 4. Build and push image
-./unix-scripts/build-and-push.sh
+# 4. Build and push image (from unix-scripts/)
+./build-and-push.sh
 
 # 5. Create test application
 cat > test-app.py << 'EOF'
@@ -302,6 +304,23 @@ Your test is successful when:
 - ✅ Application completes successfully with expected output
 - ✅ No errors in driver or executor logs
 
+## Verification Checklist
+
+- [ ] I built the custom runtime image without errors.
+- [ ] I pushed the image to the configured registry.
+- [ ] The Spark application used the custom image.
+- [ ] The application logs confirmed that the custom packages were available.
+- [ ] The Spark application completed successfully.
+
+## Next Steps
+
+Proceed to **[Lab 10: Spark and Presto SQL View Compatibility](LAB10_Spark_Presto_View_Limitations.md)** to:
+
+- Understand the documented cross-engine SQL view limitation
+- Create Iceberg source tables through Spark
+- Create and query a Presto-native view from a Spark application
+- Configure password-based Presto access
+
 ## 📚 Additional Resources
 
 - [IBM watsonx.data Documentation](https://www.ibm.com/docs/en/watsonxdata)
@@ -324,4 +343,6 @@ This testing suite is provided as-is for testing IBM watsonx.data functionality.
 
 ---
 
-**Ready to start testing?** Begin with [`unix-scripts/setup-environment.sh`](unix-scripts/setup-environment.sh) and follow the [Testing Guide](unix-scripts/spark-custom-runtime-testing-guide.md)!
+**Lab Completed!** ✓
+
+Please inform your instructor that you have completed Lab 9 before proceeding to Lab 10.

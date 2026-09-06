@@ -10,7 +10,7 @@
       "spark.executor.memory": "2G",
       "ae.spark.executor.count": "1",
       "spark.hadoop.wxd.apikey": "ZenApiKey XXXX",
-      "ae.spark.kubernetes.container.image":"gcassar/wxdata-spark-custom-runtime:v1.1",
+      "ae.spark.kubernetes.container.image": "<your-dockerhub-username>/wxdata-spark-custom-runtime:<tag>",
       "ae.spark.kubernetes.container.registry.name": "docker.io",
       "spark.sql.catalog.iceberg_data.client-pool-cache-enabled": "false"
     }
